@@ -1,8 +1,5 @@
 module.exports = {
   mode: 'universal',
-  /*
-   ** Headers of the page
-   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -16,52 +13,34 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
+  buildModules: ['@nuxtjs/eslint-module'],
+  modules: ['@nuxtjs/axios'],
   axios: {},
-  /*
-   ** Build configuration
-   */
+  router: {
+    base: '/nuxt/'
+  },
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {},
+    optimization: {
+      runtimeChunk: false,
+      splitChunks: {
+        chunks: 'async',
+        cacheGroups: {
+          commons: {
+            chunks: 'async'
+          }
+        }
+      }
+    },
     filenames: {
       app: '[name].js',
-      chunk: '[name].js',
-      css: '[name].css',
-      img: '[path][name].[ext]',
-      font: '[path][name].[ext]',
-      video: '[path][name].[ext]'
+      chunk: '[name].js'
     }
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 9601
   }
 };

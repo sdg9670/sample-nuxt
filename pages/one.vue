@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">sample-nuxt</h1>
-      <h2 class="subtitle">Index</h2>
+      <h2 class="subtitle">One</h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -26,15 +26,6 @@ import Logo from '~/components/Logo.vue';
 export default {
   components: {
     Logo
-  },
-  head() {
-    return {
-      title: this.title,
-      meta: [
-        // hid는 유니크한 식별자입니다. `vmid`를 여기에 사용하지 마세요.
-        { hid: '유니크한 아이디', name: '설명', content: '내가 커스텀한 설명' }
-      ]
-    };
   }
 };
 </script>

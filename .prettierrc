@@ -1,5 +1,10 @@
 {
   "semi": true,
   "arrowParens": "always",
-  "singleQuote": true
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "angleBracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore"
 }
